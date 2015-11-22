@@ -2,7 +2,8 @@ import numpy as np
 import cv2
 from FaceDetector import FaceDetector
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('../20_seconds_5fps.MOV')
+# cap = cv2.VideoCapture(0)
 
 c = FaceDetector()
 while(True):
@@ -12,6 +13,7 @@ while(True):
     if ret:
         c.update_img(frame)
         d = c.get_faces()
+        print d
     else:
         d = (0, frame)
 
