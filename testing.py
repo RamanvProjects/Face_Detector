@@ -1,7 +1,7 @@
 from FaceDetector import FaceDetector
 import cv2
 
-a = cv2.imread('testimg.jpg')
+a = cv2.imread('testfish.jpg')
 c = FaceDetector(a)
 
 d = c.get_faces()
