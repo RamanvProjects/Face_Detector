@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-
+from copy import deepcopy
 
 class FaceDetector():
     def __init__(self, img=None):
@@ -25,7 +25,7 @@ class FaceDetector():
 
         gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
         faces = self.face_cascade.detectMultiScale(gray, 1.3, 5)
-        self.faceDetectedImg = self.img
+        self.faceDetectedImg = deepcopy(self.img)
 
         poses = []
 
